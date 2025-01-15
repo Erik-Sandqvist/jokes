@@ -6,11 +6,11 @@
 
 <style>
     body {
-        background-color: #333;
+        background-color: #0a051b;
         color: white;
     }
     .jumbotron {
-        background-color: #007bff;
+        background-color: #071829;
         color: white;
     }
     </style>
@@ -29,6 +29,17 @@
 
     <script>
         // Function to get a random joke
+        function getRandomJoke() {
+            fetch('/japi/randomjokes')
+                .then(response => response.json())
+                .then(data => {
+                    const jokeQuestion = document.getElementById('joke-question');
+                    const jokeAnswer = document.getElementById('joke-answer');
+                    jokeQuestion.textContent = data[0].question;
+                    jokeAnswer.textContent = data[0].answer;
+                })
+                .catch(error => console.log(error));                
+        }
     </script>
 
     <footer>
