@@ -18,6 +18,7 @@ app.get('/', (req, res) => {
 
 // 404 route
 app.use((req, res) => {
+
   res.status(404).send(`
     <html>
       <head>
@@ -26,6 +27,7 @@ app.use((req, res) => {
       <body>
         <h1>The page you are trying to access does not exist.</h1>
         <p>Enjoy some jokes by going to the:</p>
+        
         <p>Dad Jokes <a href="/">HOME</a>.</p>
       </body>
     </html>
